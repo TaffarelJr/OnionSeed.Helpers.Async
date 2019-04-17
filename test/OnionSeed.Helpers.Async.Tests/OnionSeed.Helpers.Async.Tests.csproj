@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net452</TargetFramework>
+		<RootNamespace>OnionSeed.Helpers.Async</RootNamespace>
+	</PropertyGroup>
+
+	<Import Project="..\..\build\Test.props" />
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\OnionSeed.Helpers.Async\OnionSeed.Helpers.Async.csproj" />
+	</ItemGroup>
+
+</Project>
