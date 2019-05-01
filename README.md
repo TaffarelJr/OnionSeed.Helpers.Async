@@ -1,6 +1,10 @@
 # OnionSeed.Helpers.Async
 
-Contains helper methods for async functionality in the .NET Framework 4.5.2. New async features have been added in later releases of .NET Framework as well as .NET Core, and these helpers attempt to mimic that functionality.
+Contains helper methods for async functionality.
+
+Some helpers specifically augment the functionality built into .NET Framework 4.5.2, replicating new features that were added in later releases of .NET Framework as well as .NET Core.
+
+Other helpers apply more broadly, and are applicable to .NET Standard consumers.
 
 ## Status
 
