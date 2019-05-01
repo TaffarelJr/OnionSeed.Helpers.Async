@@ -13,10 +13,10 @@ namespace OnionSeed.Helpers.Async
 			// Arrange
 			var called = false;
 
-			Func<Task> subject = () =>
+			Func<System.Threading.Tasks.Task> subject = () =>
 			{
 				called = true;
-				return Task.Delay(30);
+				return System.Threading.Tasks.Task.Delay(30);
 			};
 
 			// Act
@@ -34,7 +34,7 @@ namespace OnionSeed.Helpers.Async
 
 			Func<Task<int>> subject = () =>
 			{
-				return Task.Delay(30)
+				return System.Threading.Tasks.Task.Delay(30)
 					.ContinueWith(t => expected, TaskScheduler.Current);
 			};
 

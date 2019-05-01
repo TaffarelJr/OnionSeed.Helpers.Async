@@ -21,7 +21,7 @@ namespace OnionSeed.Helpers.Async
 		/// Runs the given async method synchronously on the default <see cref="TaskScheduler"/>.
 		/// </summary>
 		/// <param name="method">The async method to be run.</param>
-		public static void RunSynchronously(this Func<Task> method) => SyncTaskFactory
+		public static void RunSynchronously(this Func<System.Threading.Tasks.Task> method) => SyncTaskFactory
 			.StartNew(method)
 			.Unwrap()
 			.GetAwaiter()
