@@ -4,6 +4,26 @@
         <name>OnionSeed.Helpers.Async</name>
     </assembly>
     <members>
+        <member name="T:OnionSeed.Helpers.Async.AsyncExtensions">
+            <summary>
+            Contains extension methods for asynchronous operations.
+            </summary>
+        </member>
+        <member name="M:OnionSeed.Helpers.Async.AsyncExtensions.RunSynchronously(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Runs the given async method synchronously on the default <see cref="T:System.Threading.Tasks.TaskScheduler"/>.
+            </summary>
+            <param name="method">The async method to be run.</param>
+        </member>
+        <member name="M:OnionSeed.Helpers.Async.AsyncExtensions.RunSynchronously``1(System.Func{System.Threading.Tasks.Task{``0}})">
+            <summary>
+            Runs the given async method synchronously on the default <see cref="T:System.Threading.Tasks.TaskScheduler"/>
+            and returns the result.
+            </summary>
+            <typeparam name="TResult">The type of the return value of the async method.</typeparam>
+            <param name="method">The async method to be run.</param>
+            <returns>The result of executing the given async function.</returns>
+        </member>
         <member name="T:OnionSeed.Helpers.Async.TaskHelpers">
             <summary>
             Contains static helpers for <see cref="T:System.Threading.Tasks.Task"/>.
