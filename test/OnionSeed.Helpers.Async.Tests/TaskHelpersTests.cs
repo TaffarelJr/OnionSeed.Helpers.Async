@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET452
+using System;
 using FluentAssertions;
 using Xunit;
 
@@ -82,3 +83,4 @@ namespace OnionSeed.Helpers.Async
 		}
 	}
 }
+#endif
