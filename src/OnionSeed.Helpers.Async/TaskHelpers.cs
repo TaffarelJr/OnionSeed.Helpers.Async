@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NET452
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
@@ -40,3 +41,4 @@ namespace OnionSeed.Helpers.Async
 		}
 	}
 }
+#endif
