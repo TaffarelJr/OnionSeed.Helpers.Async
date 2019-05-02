@@ -1,5 +1,4 @@
-﻿#if NET452
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
@@ -14,7 +13,14 @@ namespace OnionSeed.Helpers.Async
 		/// <summary>
 		/// Gets a task that has already completed successfully.
 		/// </summary>
-		public static Task CompletedTask { get; } = Task.FromResult(0);
+		public static Task CompletedTask
+		{
+#if NETSTANDARD1_1
+			get => Task.FromResult(0);
+#else
+			get => Task.CompletedTask;
+#endif
+		}
 
 		/// <summary>Creates a <see cref="Task"/> that has completed with a specified exception.</summary>
 		/// <param name="exception">The exception with which to complete the task.</param>
@@ -32,13 +38,13 @@ namespace OnionSeed.Helpers.Async
 		/// <exception cref="ArgumentNullException"><paramref name="exception"/> is <c>null</c>.</exception>
 		public static Task<TResult> FromException<TResult>(Exception exception)
 		{
-			if (exception == null)
-				throw new ArgumentNullException(nameof(exception));
-
+#if NETSTANDARD1_1
 			var source = new TaskCompletionSource<TResult>();
 			source.SetException(exception);
 			return source.Task;
+#else
+			return Task.FromException<TResult>(exception);
+#endif
 		}
 	}
 }
-#endif
